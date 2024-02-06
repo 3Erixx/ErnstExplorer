@@ -1,4 +1,4 @@
-# Project's Title
+# ErnstExplorer
 [//]: # (ErnstExplorer)
 
 ## Project Description
