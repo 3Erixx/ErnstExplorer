@@ -24,9 +24,10 @@ body {
 }
 
 .card-img-top {
-  width: 50%;
-  height: 50%;
+  height: 200px; /* Höhe des Bildes oben auf der Karte */
+  object-fit: cover;
 }
+
 
 .card-title {
   color: #007bff;
