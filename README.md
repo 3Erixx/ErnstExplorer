@@ -1,11 +1,11 @@
 # Project's Title
 [//]: # (ErnstExplorer)
 
-# Project Description
+## Project Description
 [//]: # (App zur Führung einer Gruppe durch das Max Ernst Museum 
 Brühl)
 
-# How to Use the Project
+## How to Use the Project
 [//]: # (Herunterladen der App)
 
 # Include Credits
