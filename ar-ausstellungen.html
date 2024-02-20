@@ -10,6 +10,55 @@
 <body style="margin: 0; overflow: hidden;">
   <a-scene embedded arjs="sourceType: webcam;">
 
+<!-- Bootstrap Navbar Beginn -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">ErnstExplorer</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Startseite</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="ar-ausstellungen.html">AR-Ausstellungen</a>
+         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Künstler</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Besucherinfos</a>
+        </li>
+      </ul>
+    </div>
+    <!-- Login und Sign In Buttons -->
+    <div class="d-flex">
+       <!-- Login-Button -->
+<button class="btn btn-primary me-2" onclick="login()">Login</button>
+
+<!-- Sign In-Button -->
+<button class="btn btn-primary" onclick="signIn()">Sign In</button>
+
+<script>
+  // Funktion für den Login-Button
+  function login() {
+    // Hier kannst du den Code für den Login-Vorgang einfügen
+    alert("Login erfolgreich!");
+  }
+
+  // Funktion für den Sign In-Button
+  function signIn() {
+    // Hier kannst du den Code für den Sign-In-Vorgang einfügen
+    alert("Sign In erfolgreich!");
+  }
+</script>
+    </div>
+  </div>
+</nav>
+<!-- Bootstrap Navbar Ende -->
+    
     <!-- HIRO-Marker -->
     <a-marker preset="hiro">
       <!-- Text, der angezeigt wird, wenn der Marker erkannt wird -->
