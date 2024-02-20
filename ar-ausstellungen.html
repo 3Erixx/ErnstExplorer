@@ -4,10 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AR-Ausstellungen - ErnstExplorer</title>
-  <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-    crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
   <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
   <script src="https://ar-js-org.github.io/AR.js/aframe/build/aframe-ar.js"></script>
   <style>
@@ -18,15 +15,15 @@
       left: 0;
       width: 100%;
       height: 100%;
-      pointer-events: none; /* Ermöglicht Interaktionen mit dem AR-Inhalt */
-      z-index: 10; /* Stellt sicher, dass der Rahmen über der AR-Szene liegt */
+      pointer-events: none;
+      z-index: 10;
     }
     .camera-frame-content {
       position: absolute;
-      bottom: 50px; /* Positioniert den Inhalt am unteren Rand des Rahmens */
+      bottom: 50px;
       width: 100%;
       text-align: center;
-      pointer-events: auto; /* Ermöglicht Klicks auf den Inhalt */
+      pointer-events: auto;
     }
   </style>
 </head>
@@ -34,16 +31,30 @@
 
 <div class="camera-frame">
   <div class="camera-frame-content">
-   <a-scene embedded arjs="sourceType: webcam;">
-  <a-marker preset="hiro">
-    <a-image src="Max-Ernst-At-the-first-clear-word.jpg" width="2" height="2" rotation="-90 0 0" position="0 0 0"></a-image>
-  </a-marker>
-  <a-entity camera></a-entity>
-</a-scene>
+    <button class="btn btn-primary" onclick="wechselBild()">Interaktion</button>
   </div>
 </div>
 
+<a-scene embedded arjs="sourceType: webcam;">
+  <a-marker preset="hiro">
+    <a-image id="wechselndesBild" src="Max-Ernst-At-the-first-clear-word.jpg" width="2" height="2" rotation="-90 0 0" position="0 0 0"></a-image>
+  </a-marker>
+  <a-entity camera></a-entity>
+</a-scene>
 
+<script>
+  var bilder = [
+    "Max-Ernst-At-the-first-clear-word.jpg",
+    "Max-Ernst-Attirement-of-the-Bride(1).jpg"
+  ];
+  var aktuellesBildIndex = 0;
+
+  function wechselBild() {
+    aktuellesBildIndex = (aktuellesBildIndex + 1) % bilder.length;
+    var bildElement = document.getElementById('wechselndesBild');
+    bildElement.setAttribute('src', bilder[aktuellesBildIndex]);
+  }
+</script>
 
 </body>
 </html>
