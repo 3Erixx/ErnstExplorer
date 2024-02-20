@@ -4,89 +4,46 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AR-Ausstellungen - ErnstExplorer</title>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    crossorigin="anonymous">
   <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
   <script src="https://ar-js-org.github.io/AR.js/aframe/build/aframe-ar.js"></script>
-  <!-- css anfang-->
-   <link
-  href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-  rel="stylesheet"
-  integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-  crossorigin="anonymous" />
-<script
-  src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-  integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-  crossorigin="anonymous"></script>
-  <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-  <script src="https://ar-js-org.github.io/AR.js/aframe/build/aframe-ar.js"></script>
-   <!-- css Ende-->
+  <style>
+    body, html { margin: 0; overflow: hidden; }
+    .camera-frame {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none; /* Ermöglicht Interaktionen mit dem AR-Inhalt */
+      z-index: 10; /* Stellt sicher, dass der Rahmen über der AR-Szene liegt */
+    }
+    .camera-frame-content {
+      position: absolute;
+      bottom: 50px; /* Positioniert den Inhalt am unteren Rand des Rahmens */
+      width: 100%;
+      text-align: center;
+      pointer-events: auto; /* Ermöglicht Klicks auf den Inhalt */
+    }
+  </style>
 </head>
-<body style="margin: 0; overflow: hidden;">
-  <a-scene embedded arjs="sourceType: webcam;">
+<body>
 
-<!-- Bootstrap Navbar Beginn -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">ErnstExplorer</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="#">Startseite</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="ar-ausstellungen.html">AR-Ausstellungen</a>
-         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Künstler</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Besucherinfos</a>
-        </li>
-      </ul>
-    </div>
-    <!-- Login und Sign In Buttons -->
-    <div class="d-flex">
-       <!-- Login-Button -->
-<button class="btn btn-primary me-2" onclick="login()">Login</button>
-
-<!-- Sign In-Button -->
-<button class="btn btn-primary" onclick="signIn()">Sign In</button>
-
-<script>
-  // Funktion für den Login-Button
-  function login() {
-    // Hier kannst du den Code für den Login-Vorgang einfügen
-    alert("Login erfolgreich!");
-  }
-
-  // Funktion für den Sign In-Button
-  function signIn() {
-    // Hier kannst du den Code für den Sign-In-Vorgang einfügen
-    alert("Sign In erfolgreich!");
-  }
-</script>
-    </div>
+<div class="camera-frame">
+  <div class="camera-frame-content">
+    <button class="btn btn-primary">Interaktion</button>
   </div>
-</nav>
-<!-- Bootstrap Navbar Ende -->
-    
-    <!-- HIRO-Marker -->
-    <a-marker preset="hiro">
-      <!-- Text, der angezeigt wird, wenn der Marker erkannt wird -->
-     <a-image
-        src="Max-Ernst-At-the-first-clear-word.jpg"
-        width="2"
-        height="2"
-        rotation="-90 0 0"
-        position="0 0 0"
-></a-image>
-</a-nft>
-    </a-marker>
+</div>
 
-    <a-entity camera></a-entity>
-  </a-scene>
+<a-scene embedded arjs="sourceType: webcam;">
+  <a-marker preset="hiro">
+    <a-image src="Max-Ernst-At-the-first-clear-word.jpg" width="2" height="2" rotation="-90 0 0" position="0 0 0"></a-image>
+  </a-marker>
+  <a-entity camera></a-entity>
+</a-scene>
+
 </body>
 </html>
-
