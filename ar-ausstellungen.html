@@ -75,7 +75,22 @@
     <!-- HIRO-Marker -->
     <a-marker preset="hiro">
       <!-- Text, der angezeigt wird, wenn der Marker erkannt wird -->
-      <a-text url="http://www.lazerhorse.org/wp-content/uploads/2015/11/Max-Ernst-At-the-first-clear-word.jpg" position="0 0.5 0" align="center"></img>
+      <a-nft
+      type="nft"
+      url="http://www.lazerhorse.org/wp-content/uploads/2015/11/Max-Ernst-At-the-first-clear-word.jpg"
+      smooth="true"
+      smoothCount="10"
+      smoothTolerance=".01"
+      smoothThreshold="5"
+>
+<!-- Definiere das Bild, das angezeigt werden soll -->
+<a-image
+        src="http://www.lazerhorse.org/wp-content/uploads/2015/11/Max-Ernst-At-the-first-clear-word.jpg"
+        width="1"
+        height="1"
+        position="0 0 0"
+></a-image>
+</a-nft>
     </a-marker>
 
     <a-entity camera></a-entity>
